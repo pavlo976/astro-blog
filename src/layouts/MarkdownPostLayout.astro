@@ -1,0 +1,23 @@
+---
+const { frontmatter } = Astro.props
+
+console.log(frontmatter)
+
+const { tags } = frontmatter
+---
+
+<meta charset="utf-8" />
+<p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+<h1>{frontmatter.title}</h1>
+<p>Written by {frontmatter.author}</p>
+
+<div class="tags">
+	{
+		tags.map((tag: string) => (
+			<p class="tag">
+				<a href={`/tags/${tag}`}>{tag}</a>
+			</p>
+		))
+	}
+</div>
+<slot />

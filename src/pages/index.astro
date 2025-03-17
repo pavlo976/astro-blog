@@ -1,18 +1,14 @@
 ---
-
+import Counter from "../components/Counter"
+import MainLayout from "../layouts/MainLayout.astro"
+const title = "Home"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+<MainLayout title={title}>
 	<body>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<h1>Astro</h1>
+		<!-- <Counter client:load>
+			<h2 slot="counter-slot">Counter</h2>
+			<p>Click the button to increment the counter:</p>
+		</Counter> -->
 	</body>
-</html>
+</MainLayout>
